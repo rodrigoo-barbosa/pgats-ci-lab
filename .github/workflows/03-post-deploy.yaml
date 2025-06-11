@@ -1,13 +1,15 @@
-# CI de Nível 01 - Disparo manual a partir de 1 clique
+# CI de Nível 03 - Disparo após a conclusão de um pipeline
 
 # nome do nosso 'pipeline'
-name: 'Execução Manual'
+
+name: 'Execução por deploy'
 
 # regras de disparo (gatilhos/triggers)
 # gatilho de exec manual = workflow_dispatch
-
+# gatilho de exec agendado = schedule
+# gatilho do exec a partir de outro pipe = workflow_run
 on:
-  workflow_dispatch:
+  workflow_run:
 
   #trabalho/tarefas dentro de pipelines = jobs
   jobs:
@@ -24,11 +26,11 @@ on:
       # instalação do node
       - uses: actions/setup-node@v4
         with: 
-          node-version: latest
+          node-version: 22.x
 
       # instalação do Yarn
       - name: Instalando Yarn
-        run: npm install -g yarn
+        run: npm install -g Yarn
 
       # instalação das depedências
       - name: Instalando dependências
