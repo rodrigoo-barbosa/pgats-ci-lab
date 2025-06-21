@@ -5,7 +5,7 @@ name: 'Execução Agendada'
 # regras de disparo (gatilhos/triggers)
 on:
   schedule:
-   - cron: '0 6 * * 1'
+    - cron: '0 6 * * 1'
 
 # trabalho/tarefas dentro de pipelines = jobs
 jobs:
