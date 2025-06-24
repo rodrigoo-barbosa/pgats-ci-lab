@@ -3,6 +3,8 @@
 name: 'Execução Agendada'
 
 # regras de disparo (gatilhos/triggers)
+# gatilho exec agendada = schedule
+
 on:
   schedule:
     - cron: '0 6 * * 1'

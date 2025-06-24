@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Instalando Yarn  
+      - name: Instalando Yarn
         run: npm install -g yarn
 
       - name: Instalando dependências
         run: yarn
-      
+
       - name: Checando padronizacao do codigo
         run: yarn lint
 
@@ -27,12 +27,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Instalando Yarn  
+      - name: Instalando Yarn
         run: npm install -g yarn
 
       - name: Instalando dependências
         run: yarn
-      
+
       - name: Executanto testes de unidade
         run: yarn test
 
@@ -45,7 +45,7 @@ jobs:
 
       # instalação do node
       - uses: actions/setup-node@v4
-        with: 
+        with:
           node-version: latest
 
       # instalação do Yarn
