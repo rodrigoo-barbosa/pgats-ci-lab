@@ -23,6 +23,7 @@ jobs:
 
   unidade:
     runs-on: ubuntu-latest
+    needs: [inspecao]
 
     steps:
       - uses: actions/checkout@v4
@@ -33,11 +34,12 @@ jobs:
       - name: Instalando dependências
         run: yarn
 
-      - name: Executanto testes de unidade
+      - name: Executando testes de unidade
         run: yarn test
 
   e2e-tests:
     runs-on: ubuntu-latest
+    needs: [inspecao]
 
     steps:
       # clone do projeto
@@ -72,6 +74,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: [e2e-tests]
 
     steps:
       - name: Simulação do Deploy
